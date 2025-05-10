@@ -10,12 +10,21 @@ interface EventCardProps {
   image: string;
   link?: string;
   className?: string;
+  onClick?: () => void;
 }
 
-const EventCard = ({ title, date, location, image, link, className }: EventCardProps) => {
+const EventCard = ({ title, date, location, image, link, className, onClick }: EventCardProps) => {
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
     <Link 
       to={link || "#"} 
+      onClick={handleClick}
       className={cn(
         "group bg-secondary rounded-lg overflow-hidden flex flex-col hover:shadow-lg transition-all duration-300",
         "border border-gray-800 hover:border-ted-red/50",

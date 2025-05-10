@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 
 const ToroidalAnimation = () => {
-  const canvasRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
   
   return (
     <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden pointer-events-none">
@@ -11,7 +11,7 @@ const ToroidalAnimation = () => {
           src="/lovable-uploads/18129276-ace0-4caa-a199-9b541aac0ead.png" 
           alt="Beyond Tomorrow" 
           className="w-full h-full object-contain animate-spin-slow animate-pulse-subtle"
-          ref={canvasRef}
+          ref={imageRef}
         />
         <div className="absolute inset-0 bg-gradient-radial from-transparent to-black"></div>
       </div>
