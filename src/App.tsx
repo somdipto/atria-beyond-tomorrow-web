@@ -14,6 +14,10 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Layout from "./Layout";
 
+// Create new pages for the rest of the content
+import Partners from "./pages/Partners";
+import Tickets from "./pages/Tickets";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,6 +32,8 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/events" element={<Events />} />
             <Route path="/speak" element={<Speak />} />
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/tickets" element={<Tickets />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />

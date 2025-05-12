@@ -98,7 +98,7 @@ export default {
 					'100%': { transform: 'rotate(360deg)' },
 				},
 				'pulse-subtle': {
-					'0%, 100%': { opacity: '1' },
+					'0%': { opacity: '1' },
 					'50%': { opacity: '0.8' },
 				},
 				'reveal-text': {
@@ -113,7 +113,10 @@ export default {
 				'spin-slow': 'spin-slow 15s linear infinite',
 				'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
 				'reveal-text': 'reveal-text 1.5s ease-out forwards',
-			}
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

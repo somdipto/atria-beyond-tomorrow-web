@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from "@/lib/utils";
+import Button from './Button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,43 +23,48 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Past Events', path: '/events' },
-    { name: 'Speak', path: '/speak' },
+    { name: 'Speakers', path: '/speak' },
+    { name: 'Tickets', path: '/tickets' },
+    { name: 'Partners', path: '/partners' },
+    { name: 'About Us', path: '/about' },
   ];
 
   return (
     <>
       <nav 
         className={cn(
-          "fixed w-full z-50 transition-all duration-300 px-4 md:px-8 py-4",
+          "fixed w-full z-50 transition-all duration-300 px-6 md:px-12 py-5",
           isScrolled ? "bg-black bg-opacity-90 backdrop-blur-md" : "bg-transparent"
         )}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="max-w-screen-xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/51337aa3-2728-4625-8e6c-849b452a10d1.png" 
               alt="TEDxAtria IT" 
-              className="h-8 md:h-10"
+              className="h-7 md:h-8"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <Link 
                 key={link.path} 
                 to={link.path}
                 className={cn(
-                  "text-sm uppercase tracking-wide transition-colors hover:text-ted-red",
+                  "text-sm font-normal tracking-wide transition-colors hover:text-ted-red",
                   location.pathname === link.path ? "text-ted-red font-medium" : "text-white"
                 )}
               >
                 {link.name}
               </Link>
             ))}
+            <Link to="/tickets">
+              <Button variant="outline" size="sm" className="border-ted-red rounded-full px-6">
+                Book now
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Navigation Button */}
@@ -93,13 +99,18 @@ const Navbar = () => {
                 to={link.path}
                 onClick={() => setMenuOpen(false)}
                 className={cn(
-                  "text-xl uppercase tracking-wide transition-colors",
+                  "text-xl tracking-wide transition-colors",
                   location.pathname === link.path ? "text-ted-red font-medium" : "text-white"
                 )}
               >
                 {link.name}
               </Link>
             ))}
+            <Link to="/tickets" onClick={() => setMenuOpen(false)}>
+              <Button variant="primary" size="md" className="mt-4">
+                Book now
+              </Button>
+            </Link>
           </div>
         </div>
       )}
