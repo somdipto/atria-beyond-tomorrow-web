@@ -14,7 +14,8 @@
     --popover: 0 0% 3%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 0 85% 51%;
+    /* Updated to official TEDx red */
+    --primary: 351 100% 46%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 9%;
@@ -23,7 +24,8 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 0 85% 51%;
+    /* Updated to official TEDx red */
+    --accent: 351 100% 46%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -31,18 +33,19 @@
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 0 85% 51%;
+    --ring: 351 100% 46%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 85% 51%;
+    /* Updated to official TEDx red */
+    --sidebar-primary: 351 100% 46%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 9%;
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 0 85% 51%;
+    --sidebar-ring: 351 100% 46%;
   }
 }
 
@@ -68,7 +71,7 @@
   
   .reveal-animation::after {
     content: '';
-    @apply absolute top-0 left-0 w-full h-full bg-ted-red;
+    @apply absolute top-0 left-0 w-full h-full bg-primary;
     animation: reveal 1.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
   }
   
@@ -91,5 +94,68 @@
     background: linear-gradient(to right, #fff, #999);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  /* New aesthetic classes */
+  .glass-effect {
+    @apply bg-black/30 backdrop-blur-md border border-white/10;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-white/50;
+  }
+  
+  .gradient-border {
+    position: relative;
+    border-radius: var(--radius);
+  }
+  
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius) + 2px);
+    padding: 2px;
+    background: linear-gradient(45deg, hsl(351, 100%, 46%), transparent, hsl(351, 100%, 46%));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-subtle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+  
+  .tedx-button {
+    @apply relative overflow-hidden rounded-full bg-primary font-medium text-white transition-all hover:shadow-[0_0_20px_rgba(235,0,40,0.5)] active:scale-95;
+  }
+  
+  .tedx-button::before {
+    @apply absolute inset-0 bg-white/10 opacity-0 transition-opacity;
+    content: '';
+  }
+  
+  .tedx-button:hover::before {
+    @apply opacity-100;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-[0_5px_30px_rgba(235,0,40,0.25)] hover:scale-[1.02];
   }
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import Button from './Button';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,10 +32,13 @@ const Navbar = () => {
 
   return (
     <>
-      <nav 
+      <motion.nav 
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
         className={cn(
           "fixed w-full z-50 transition-all duration-300 px-6 md:px-12 py-5",
-          isScrolled ? "bg-black bg-opacity-90 backdrop-blur-md" : "bg-transparent"
+          isScrolled ? "bg-black/70 backdrop-blur-md shadow-md" : "bg-transparent"
         )}
       >
         <div className="max-w-screen-xl mx-auto flex justify-between items-center">
@@ -53,15 +57,16 @@ const Navbar = () => {
                 key={link.path} 
                 to={link.path}
                 className={cn(
-                  "text-sm font-normal tracking-wide transition-colors hover:text-ted-red",
+                  "text-sm font-normal tracking-wide transition-colors hover:text-ted-red relative group",
                   location.pathname === link.path ? "text-ted-red font-medium" : "text-white"
                 )}
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-ted-red transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
             <Link to="/tickets">
-              <Button variant="outline" size="sm" className="border-ted-red rounded-full px-6">
+              <Button variant="outline" size="sm" className="rounded-full px-6">
                 Book now
               </Button>
             </Link>
@@ -69,51 +74,78 @@ const Navbar = () => {
 
           {/* Mobile Navigation Button */}
           <button 
-            className="md:hidden text-white"
+            className="md:hidden text-white relative z-50"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
           >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor" 
-              className="w-6 h-6"
-            >
-              {menuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            <div className="w-6 h-6 flex flex-col justify-center items-center">
+              <span className={cn(
+                "w-5 h-0.5 bg-white block transition-all duration-300",
+                menuOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
+              )}></span>
+              <span className={cn(
+                "w-5 h-0.5 bg-white block transition-all duration-300",
+                menuOpen ? "opacity-0" : "opacity-100"
+              )}></span>
+              <span className={cn(
+                "w-5 h-0.5 bg-white block transition-all duration-300",
+                menuOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
+              )}></span>
+            </div>
           </button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-black pt-20">
-          <div className="flex flex-col items-center space-y-6 p-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMenuOpen(false)}
-                className={cn(
-                  "text-xl tracking-wide transition-colors",
-                  location.pathname === link.path ? "text-ted-red font-medium" : "text-white"
-                )}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-md pt-20"
+          >
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
+              className="flex flex-col items-center space-y-6 p-8"
+            >
+              {navLinks.map((link, index) => (
+                <motion.div
+                  key={link.path}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * index }}
+                >
+                  <Link
+                    to={link.path}
+                    onClick={() => setMenuOpen(false)}
+                    className={cn(
+                      "text-xl tracking-wide transition-colors",
+                      location.pathname === link.path ? "text-ted-red font-medium" : "text-white"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
               >
-                {link.name}
-              </Link>
-            ))}
-            <Link to="/tickets" onClick={() => setMenuOpen(false)}>
-              <Button variant="primary" size="md" className="mt-4">
-                Book now
-              </Button>
-            </Link>
-          </div>
-        </div>
-      )}
+                <Link to="/tickets" onClick={() => setMenuOpen(false)}>
+                  <Button variant="primary" size="md" className="mt-4">
+                    Book now
+                  </Button>
+                </Link>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
