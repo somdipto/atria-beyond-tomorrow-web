@@ -29,23 +29,8 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-black text-white pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-ted-red/20 to-transparent"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 z-10 relative">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">About TEDxAtria IT</h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              TEDxAtria IT is an independently organized TED event hosted at Atria Institute of Technology, bringing together the brightest minds to share ideas that matter in technology, science, business, and beyond.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* About TEDx Section */}
+{/* About TEDx Section */}
       <section className="py-16 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -64,6 +49,21 @@ const About = () => {
                 "TED is a nonprofit organization devoted to Ideas Worth Spreading. Started as a four-day conference in California 30 years ago, TED has grown to support its mission with multiple initiatives."
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+            {/* Hero Section */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-ted-red/20 to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 z-10 relative">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">About TEDxAtria IT</h1>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              TEDxAtria IT is an independently organized TED event hosted at Atria Institute of Technology, bringing together the brightest minds to share ideas that matter in technology, science, business, and beyond.
+            </p>
           </div>
         </div>
       </section>

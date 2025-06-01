@@ -40,23 +40,7 @@ const Speak = () => {
 
   return (
     <div className="min-h-screen bg-black text-white pt-20">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-ted-red/20 to-transparent"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 z-10 relative">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Speak at TEDxAtria IT</h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Have an idea worth spreading? We're looking for passionate speakers to share innovative ideas, unique perspectives, and inspiring stories at our upcoming TEDxAtria IT event.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* What we're looking for */}
+{/* What we're looking for */}
       <section className="py-16 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -90,99 +74,118 @@ const Speak = () => {
                 TEDxAtria IT is particularly interested in talks related to our theme "Beyond Tomorrow" that explore futuristic concepts, emerging technologies, sustainable innovations, or paradigm-shifting ideas that could transform our world.
               </p>
               <p>
-                Your talk should be concise (under 18 minutes), engaging, and accessible to a broad audience. The best TED talks distill complex ideas into clear, compelling presentations that inspire action and spark conversation.
+                Your talk should be concise (under 15 minutes), engaging, and accessible to a broad audience. The best TED talks distill complex ideas into clear, compelling presentations that inspire action and spark conversation.
               </p>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Process */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Speaker Selection Process</h2>
-            
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gray-800 transform md:translate-x-[-50%]"></div>
-              
-              {/* Timeline items */}
-              <div className="space-y-12">
-                {/* Item 1 */}
-                <div className="relative flex flex-col md:flex-row items-center">
-                  <div className="order-1 md:w-1/2 md:pr-8 md:text-right">
-                    <h3 className="text-xl font-bold mb-2">Application Submission</h3>
-                    <p className="text-gray-300">
-                      Fill out our speaker application form with your personal information and talk proposal.
-                    </p>
-                  </div>
-                  <div className="z-10 flex items-center order-0 md:order-0 bg-ted-red rounded-full h-8 w-8 justify-center shadow-xl">
-                    <span className="text-white font-bold">1</span>
-                  </div>
-                  <div className="order-2 md:w-1/2 md:pl-8"></div>
-                </div>
-                
-                {/* Item 2 */}
-                <div className="relative flex flex-col md:flex-row items-center">
-                  <div className="order-1 md:order-2 md:w-1/2 md:pl-8">
-                    <h3 className="text-xl font-bold mb-2">Review Process</h3>
-                    <p className="text-gray-300">
-                      Our curation team evaluates all applications based on originality, relevance, and alignment with our theme.
-                    </p>
-                  </div>
-                  <div className="z-10 flex items-center order-0 bg-ted-red rounded-full h-8 w-8 justify-center shadow-xl">
-                    <span className="text-white font-bold">2</span>
-                  </div>
-                  <div className="order-2 md:order-1 md:w-1/2 md:pr-8"></div>
-                </div>
-                
-                {/* Item 3 */}
-                <div className="relative flex flex-col md:flex-row items-center">
-                  <div className="order-1 md:w-1/2 md:pr-8 md:text-right">
-                    <h3 className="text-xl font-bold mb-2">Interview</h3>
-                    <p className="text-gray-300">
-                      Selected candidates are invited for an interview to discuss their ideas in more detail.
-                    </p>
-                  </div>
-                  <div className="z-10 flex items-center order-0 md:order-0 bg-ted-red rounded-full h-8 w-8 justify-center shadow-xl">
-                    <span className="text-white font-bold">3</span>
-                  </div>
-                  <div className="order-2 md:w-1/2 md:pl-8"></div>
-                </div>
-                
-                {/* Item 4 */}
-                <div className="relative flex flex-col md:flex-row items-center">
-                  <div className="order-1 md:order-2 md:w-1/2 md:pl-8">
-                    <h3 className="text-xl font-bold mb-2">Preparation & Coaching</h3>
-                    <p className="text-gray-300">
-                      Final speakers receive guidance and coaching to refine their talks for maximum impact.
-                    </p>
-                  </div>
-                  <div className="z-10 flex items-center order-0 bg-ted-red rounded-full h-8 w-8 justify-center shadow-xl">
-                    <span className="text-white font-bold">4</span>
-                  </div>
-                  <div className="order-2 md:order-1 md:w-1/2 md:pr-8"></div>
-                </div>
-                
-                {/* Item 5 */}
-                <div className="relative flex flex-col md:flex-row items-center">
-                  <div className="order-1 md:w-1/2 md:pr-8 md:text-right">
-                    <h3 className="text-xl font-bold mb-2">Event Day</h3>
-                    <p className="text-gray-300">
-                      Share your idea on the TEDxAtria IT stage and inspire our audience.
-                    </p>
-                  </div>
-                  <div className="z-10 flex items-center order-0 md:order-0 bg-ted-red rounded-full h-8 w-8 justify-center shadow-xl">
-                    <span className="text-white font-bold">5</span>
-                  </div>
-                  <div className="order-2 md:w-1/2 md:pl-8"></div>
-                </div>
-              </div>
-            </div>
+      {/* Hero Section */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-ted-red/20 to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 z-10 relative">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Speak at TEDxAtria IT</h1>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Have an idea worth spreading? We're looking for passionate speakers to share innovative ideas, unique perspectives, and inspiring stories at our upcoming TEDxAtria IT event.
+            </p>
           </div>
         </div>
       </section>
+
+     {/* Process */}
+<section className="py-16 bg-black">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto">
+      <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-white">
+        Speaker Selection Process
+      </h2>
+
+      <div className="relative">
+        {/* Timeline line */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gray-800"></div>
+
+        {/* Timeline items */}
+        <div className="space-y-24">
+          {/* Item 1 */}
+          <div className="relative flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 text-right pr-8">
+              <h3 className="text-xl font-bold mb-2 text-white">Application Submission</h3>
+              <p className="text-gray-300">
+                Fill out our speaker application form with your personal information and talk proposal.
+              </p>
+            </div>
+            <div className="z-10 bg-ted-red rounded-full h-10 w-10 flex items-center justify-center shadow-xl">
+              <span className="text-white font-bold">1</span>
+            </div>
+            <div className="md:w-1/2"></div>
+          </div>
+
+          {/* Item 2 */}
+          <div className="relative flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2"></div>
+            <div className="z-10 bg-ted-red rounded-full h-10 w-10 flex items-center justify-center shadow-xl">
+              <span className="text-white font-bold">2</span>
+            </div>
+            <div className="md:w-1/2 text-left pl-8">
+              <h3 className="text-xl font-bold mb-2 text-white">Review Process</h3>
+              <p className="text-gray-300">
+                Our curation team evaluates all applications based on originality, relevance, and alignment with our theme.
+              </p>
+            </div>
+          </div>
+
+          {/* Item 3 */}
+          <div className="relative flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 text-right pr-8">
+              <h3 className="text-xl font-bold mb-2 text-white">Interview</h3>
+              <p className="text-gray-300">
+                Selected candidates are invited for an interview to discuss their ideas in more detail.
+              </p>
+            </div>
+            <div className="z-10 bg-ted-red rounded-full h-10 w-10 flex items-center justify-center shadow-xl">
+              <span className="text-white font-bold">3</span>
+            </div>
+            <div className="md:w-1/2"></div>
+          </div>
+
+          {/* Item 4*/}
+          <div className="relative flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2"></div>
+            <div className="z-10 bg-ted-red rounded-full h-10 w-10 flex items-center justify-center shadow-xl">
+              <span className="text-white font-bold">4</span>
+            </div>
+            <div className="md:w-1/2 text-left pl-8">
+              <h3 className="text-xl font-bold mb-2 text-white">Preparation & Coaching</h3>
+              <p className="text-gray-300">
+                Final speakers receive guidance and coaching to refine their talks for maximum impact.
+              </p>
+            </div>
+          </div>
+
+          {/* Item 5*/}
+          <div className="relative flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 text-right pr-8">
+              <h3 className="text-xl font-bold mb-2 text-white">Event Day</h3>
+              <p className="text-gray-300">
+                Share your idea on the TEDxAtria IT stage and inspire our audience.
+              </p>
+            </div>
+            <div className="z-10 bg-ted-red rounded-full h-10 w-10 flex items-center justify-center shadow-xl">
+              <span className="text-white font-bold">5</span>
+            </div>
+            <div className="md:w-1/2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       
       {/* Application Form */}
       <section className="py-16 bg-gray-900">
@@ -319,21 +322,14 @@ const Speak = () => {
               <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-2">How long should my talk be?</h3>
                 <p className="text-gray-300">
-                  TEDx talks are typically between 8-18 minutes long. This format encourages speakers to focus on their core message and deliver it concisely.
-                </p>
-              </div>
-              
-              <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-2">Will I receive help preparing my talk?</h3>
-                <p className="text-gray-300">
-                  Yes! Selected speakers receive coaching and guidance from our team to help refine their ideas, structure their talks, and practice delivery for maximum impact.
+                  TEDx talks are typically between 8-15 minutes long. This format encourages speakers to focus on their core message and deliver it concisely.
                 </p>
               </div>
               
               <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-2">Can I use visual aids or slides?</h3>
                 <p className="text-gray-300">
-                  Yes, speakers can use slides or visual aids if they enhance the talk. Our team will work with you on the technical aspects of your presentation.
+                  Yes, speakers can use slides if they enhance the talk. Videos are not permitted.
                 </p>
               </div>
             </div>

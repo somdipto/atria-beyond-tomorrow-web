@@ -33,7 +33,7 @@ const Tickets = () => {
             variants={fadeInUp}
             className="text-4xl md:text-6xl font-bold mb-8 text-center gradient-text"
           >
-            Get your TEDxAtria IT Tickets
+            Get your TEDxAtria IT Passes
           </motion.h1>
           <motion.p 
             variants={fadeInUp}

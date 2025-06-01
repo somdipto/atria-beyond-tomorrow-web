@@ -24,8 +24,6 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Speakers', path: '/speak' },
-    { name: 'Tickets', path: '/tickets' },
     { name: 'Partners', path: '/partners' },
     { name: 'About Us', path: '/about' },
   ];
@@ -41,12 +39,12 @@ const Navbar = () => {
           isScrolled ? "bg-black/70 backdrop-blur-md shadow-md" : "bg-transparent"
         )}
       >
-        <div className="max-w-screen-xl mx-auto flex justify-between items-center">
+        <div className="max-w-screen-xl mx-auto flex justify-between items-center h-24">
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/51337aa3-2728-4625-8e6c-849b452a10d1.png" 
               alt="TEDxAtria IT" 
-              className="h-7 md:h-8"
+              className="h-9 scale-150 object-contain"
             />
           </Link>
 
